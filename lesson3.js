@@ -1,8 +1,8 @@
-function checkHasProperty(property, object) {
-	return property in object;
+function createObject() {
+	return Object.create(null);
 }
 
-const object = Object.create({protoProp: 'protoProperty'});
-object.ownProp = 'ownProperty';
+const object = createObject();
+object.prop = 1;
 
-console.log(checkHasProperty('protoProp', object));
+console.log(object);

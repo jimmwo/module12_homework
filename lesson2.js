@@ -1,11 +1,8 @@
-function printOwnProperties(object) {
-	for (let property in object) {
-		if (object.hasOwnProperty(property)) {
-			console.log(property, object[property]);
-		}
-	}
+function checkHasProperty(property, object) {
+	return property in object;
 }
 
-const property = Object.create({protoProp: 'protoProperty'});
-property.ownProp = 'ownProperty';
-printOwnProperties(property);
+const object = Object.create({protoProp: 'protoProperty'});
+object.ownProp = 'ownProperty';
+
+console.log(checkHasProperty('protoProp', object));
